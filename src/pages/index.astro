@@ -1,43 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {getCollection} from 'astro:content';
+import type { astroCalledServerError } from 'astro:actions';
 
 /* Placeholder projekt */
-const projects = [
-	{
-		id: 1,
-		name: 'Rimfrost',
-		year: '2025',
-		type: 'Explorative project',
-		image: "projects/1/optimerade-rendering1.jpg"
-	},
-	{
-		id: 2,
-		name: 'Lamp - Parametric Design',
-		year: '2023',
-		type: 'Design Project',
-		image: "/projects/2/lamp.jpg"
-	},
-	{
-		id: 3,
-		name: 'Radhus',
-		year: '2025',
-		type: 'Residential',
-		image: "/material.png"
-	}
-]
-
-const featuredProject = projects[1];
+const projects = await getCollection('projects'); 
+const sortedProjects = projects.sort((a, b) => parseInt(b.data.year) - parseInt(a.data.year));
+const featuredProject = sortedProjects[1];
 
 ---
 
 <Layout title="Adam Skoglund | Portfolio ">
 	<section class="hero-section">
-		<a href={`projects/${featuredProject.id}`} class="hero-link">
+		<a href={`projects/${featuredProject.slug}`} class="hero-link">
 			<div class="hero-image-container">
-				<img src={featuredProject.image} alt={featuredProject.name} class="hero-img" />
+				<img src={featuredProject.data.heroImage} alt={featuredProject.data.title} class="hero-img" />
 				
 				<div class="hero-overlay">
-					<h2 class="hero-title">{featuredProject.name}</h2>
+					<h2 class="hero-title">{featuredProject.data.title}</h2>
 					<span class="meta-text">Show Project</span>
 				</div>
 			</div>
@@ -53,12 +33,11 @@ const featuredProject = projects[1];
 		<hr />
 
 		<ul>
-			{projects.map((project) => (
+			{sortedProjects.map((project) => (
 				<li>
-
-					<a href={`project/${project.id}`} class="project-row">
-						<span class="project-name">{project.name}</span>
-						<span class="project-meta">{project.year} - {project.type}</span>
+					<a href={`projects/${project.slug}`} class="project-row">
+						<span class="project-name">{project.data.title}</span>
+						<span class="project-meta meta-text">{project.data.year} - {project.data.category}</span>
 					</a>
 
 				</li>

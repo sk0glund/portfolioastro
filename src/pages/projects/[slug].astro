@@ -1,0 +1,121 @@
+---
+import {getCollection} from 'astro:content';
+import type {CollectionEntry} from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import type { CollectionKey } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+}
+
+// Generera sökvägar som static paths från content.
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+const {entry} = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Adam Skoglund`}>
+    <article class="project-container">
+
+        <div class="project-hero">
+            <img src={entry.data.heroImage} alt={entry.data.title} />
+        </div>
+
+        <section class="project-info">
+            <div class="meta-block meta-text">
+                <h1>{entry.data.title}</h1>
+                <div class="meta-grid">
+                    <div>
+                        <span>Year</span>
+                        <p>{entry.data.year}</p>
+                    </div>
+                    <div>
+                        <span>Location</span>
+                        <p>{entry.data.location}</p>
+                    </div>
+                    <div>
+                        <span>Category</span>
+                        <p>{entry.data.category}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reflection-text">
+                <Content />
+            </div>
+        </section>
+
+        <section class="project-gallery">
+            {entry.data.gallery && entry.data.gallery.map((item) => (
+                <div class="gallery-item">
+                    <img src={item.src} alt={item.caption || entry.data.title} />
+                    {item.caption && <p class="meta-text">{item.caption}</p>}
+                </div>
+            ))}
+        </section>
+    </article>
+</Layout>
+
+<style>
+    .project-container {
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .project-hero img {
+        width: 100%;
+        max-height: 80vh;
+        object-fit: cover;
+        margin-bottom: var(spacing-md);
+    }
+
+    .project-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        max-width: 1000px;
+    }
+
+    .meta-block h1 {
+        font-family: var(--font-heading)
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-sm);
+        text-transform: none;
+    }
+
+    .meta-grid {
+        display: flex;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-sm);
+    }
+
+    .meta-grid div p {
+        color: var(--color-text);
+    }
+
+    .reflection-text {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-accent);
+    }
+
+    .project-gallery {
+        display: flex;
+        flex-direction: column;
+        gap = var(--spacing-lg);
+    }
+
+    @media (min-width:1024px) {
+        .project-info {
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-xl)
+        }
+    }
+</style>
