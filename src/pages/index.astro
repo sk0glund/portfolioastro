@@ -8,20 +8,28 @@ const projects = await getCollection('projects');
 const sortedProjects = projects.sort((a, b) => parseInt(b.data.year) - parseInt(a.data.year));
 const featuredProject = sortedProjects[1];
 
+const slides = sortedProjects.slice(0, 5);
+
 ---
 
 <Layout title="Adam Skoglund | Portfolio ">
-	<section class="hero-section">
-		<a href={`projects/${featuredProject.slug}`} class="hero-link">
+	<section class="hero-section" id="hero-slider">
+		{slides.map((project, index) => (
+		<a 
+			href={`projects/${project.slug}`}
+			class={`hero-slide ${index === 0 ? 'active' : ''}`}
+			data-index={index}
+		>
 			<div class="hero-image-container">
-				<img src={featuredProject.data.heroImage} alt={featuredProject.data.title} class="hero-img" />
+				<img src={project.data.heroImage} alt={project.data.title} class="hero-img" />
 				
 				<div class="hero-overlay">
-					<h2 class="hero-title">{featuredProject.data.title}</h2>
+					<h2 class="hero-title">{project.data.title}</h2>
 					<span class="meta-text">Show Project</span>
 				</div>
 			</div>
 		</a>
+		))}
 	</section>
 
 	<section class="project-list">
@@ -48,6 +56,39 @@ const featuredProject = sortedProjects[1];
 
 </Layout>
 
+
+<script>
+	const slides = document.querySelectorAll('.hero-slide');
+	let currentIndex = 0;
+	const intervalTime = 5000;
+	let slideInterval: ReturnType<typeof setInterval>;
+
+	function nextSlide() {
+		slides[currentIndex].classList.remove('active');
+		//Byt bild, starta om ifall listan loopat.
+		currentIndex = (currentIndex + 1) % slides.length;
+		slides[currentIndex].classList.add('active');
+	}
+
+	function startSlide() {
+		slideInterval = setInterval(nextSlide, intervalTime);
+	}
+
+	function stopSlide() {
+		clearInterval(slideInterval);
+	}
+
+	if (slides.length > 1) {
+		startSlide();
+
+		const slideContainer = document.getElementById('.hero-slide');
+		slideContainer?.addEventListener('mouseenter', stopSlide);
+		slideContainer?.addEventListener('mouseleave', startSlide);
+	}
+</script>
+
+
+
 <style>
 
 /* Hero style*/
@@ -55,6 +96,24 @@ const featuredProject = sortedProjects[1];
 		margin-bottom: var(--spacing-lg);
 		height: 70vh;
 		width: 100%;
+	}
+
+	.hero-slide {
+		position: absolute;
+		top: 100px;
+		left: 100px;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		z-index = 1;
+		pointer-events: none;
+	}
+
+	.hero-slide.active{
+		opacity: 1;
+		z-index = 2;
+		pointer-events: auto;
 	}
 
 	.hero-link {
@@ -92,6 +151,12 @@ const featuredProject = sortedProjects[1];
 		align-items: center;
 		opacity: 0;
 		transition: all 0.4s ease;
+	}
+
+	.hero-slide:hover .hero-overlay {
+		background: rgba(255, 255, 255, 0.4);
+		opacity: 1;
+		cursor: pointer;
 	}
 
 	.hero-link:hover .hero-overlay {
