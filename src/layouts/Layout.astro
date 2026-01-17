@@ -42,11 +42,13 @@ const {title} = Astro.props;
         display: flex;
         justify-content: space-between;
         align-items: center;
-         padding: var(--spacing-md) var(--spacing-sm);
-        position: fixed;
-        top: 0;
-        left: 0;
+        padding: var(--spacing-md) var(--spacing-sm);
+
+        margin: 0 auto;
+        position: relative;
         width: 100%;
+        max-width: var(--container-max);
+        margin: 0 auto;
         background: rgba(255,255,255,0.9);
         z-index: 100;
         border-bottom: 1px solid transparent;
@@ -64,7 +66,6 @@ const {title} = Astro.props;
     }
 
     main {
-        padding-top: 100px;
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
         max-width: var(--container-max);
