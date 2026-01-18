@@ -32,15 +32,12 @@ const { Content } = await entry.render();
                 <h1>{entry.data.title}</h1>
                 <div class="meta-grid">
                     <div>
-                        <span>Year</span>
                         <p>{entry.data.year}</p>
                     </div>
                     <div>
-                        <span>Location</span>
                         <p>{entry.data.location}</p>
                     </div>
                     <div>
-                        <span>Category</span>
                         <p>{entry.data.category}</p>
                     </div>
                 </div>
@@ -71,7 +68,7 @@ const { Content } = await entry.render();
         width: 100%;
         max-height: 80vh;
         object-fit: cover;
-        margin-bottom: var(spacing-md);
+        padding: var(--spacing-md) 0 var(--spacing-lg) 0;
     }
 
     .project-info {

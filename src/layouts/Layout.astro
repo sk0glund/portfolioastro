@@ -28,7 +28,7 @@ const {title, hideContact = false} = Astro.props;
                 <a href="/" class="site-title">Adam Skoglund</a>
             </div>
             <div class="header-right">
-                {!hideContact && <a href="/cv" class="meta-text nav-link">CV / Contact</a>}
+                {!hideContact && <a href="/cv" class="meta-text nav-link">Contact</a>}
             </div>
         </header>
 
@@ -63,6 +63,13 @@ const {title, hideContact = false} = Astro.props;
         text-transform: uppercase;
     }
 
+
+    .nav-link {
+        font-family: var(--font-heading);
+        font-weight: 400;
+        font-size: 1.0rem;
+        text-transform: uppercase;
+    }
     .nav-link:hover {
         text-decoration: underline;
     }
