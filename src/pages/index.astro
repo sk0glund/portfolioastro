@@ -13,7 +13,7 @@ const slides = sortedProjects.slice(0, 5);
 ---
 
 <Layout title="Adam Skoglund | Portfolio ">
-	<section class="hero-section" id="hero-slider">
+	<section class="hero-section" id="hero-slide">
 		{slides.map((project, index) => (
 		<a 
 			href={`projects/${project.slug}`}
@@ -58,7 +58,8 @@ const slides = sortedProjects.slice(0, 5);
 
 
 <script>
-	const slides = document.querySelectorAll('hero-slider');
+	const slides = document.querySelectorAll('.hero-slide');
+	
 	let currentIndex = 0;
 	const intervalTime = 5000;
 	let slideInterval: ReturnType<typeof setInterval>;
@@ -81,7 +82,7 @@ const slides = sortedProjects.slice(0, 5);
 	if (slides.length > 1) {
 		startSlide();
 
-		const slideContainer = document.getElementById('hero-slider');
+		const slideContainer = document.getElementById('.hero-slide');
 		slideContainer?.addEventListener('mouseenter', stopSlide);
 		slideContainer?.addEventListener('mouseleave', startSlide);
 	}
@@ -115,7 +116,7 @@ const slides = sortedProjects.slice(0, 5);
 
 	.hero-slide.active{
 		opacity: 1;
-		z-index 2;
+		z-index: 2;
 		pointer-events: auto;
 	}
 
