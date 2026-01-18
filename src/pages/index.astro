@@ -35,7 +35,7 @@ const slides = sortedProjects.slice(0, 5);
 	<section class="project-list">
 		<div class="list-header meta-text">
 			<span>Project</span>
-			<span>Year / Category</span>
+			<span>Year</span>
 		</div>
 		
 		<hr />
@@ -45,7 +45,7 @@ const slides = sortedProjects.slice(0, 5);
 				<li>
 					<a href={`projects/${project.slug}`} class="project-row">
 						<span class="project-name">{project.data.title}</span>
-						<span class="project-meta meta-text">{project.data.year} - {project.data.category}</span>
+						<span class="project-meta meta-text">{project.data.year}</span>
 					</a>
 
 				</li>
