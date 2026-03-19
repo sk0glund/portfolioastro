@@ -1,15 +1,13 @@
 ---
-title: "Radhus"
+title: "Gibraltargatan"
 year: "2025"
-category: "Residential"
-location: "Mossen, Gothenburg"
+category: "Townhouse"
+location: "Gibraltargatan, Gothenburg"
 groupProject: 0;
 heroImage: "/projects/radhus-at2/material.png"
 gallery: 
-    -   src: "/projects/radhus-at2/material.png"
-        imgDesc: "Materialval"
+    -   src: "/projects/radhus-at2/fasad_fram.png"
+        imgDesc: "Street Elevation"
 ---
 
-Ett arkitekturprojekt där fokus lagts på goda boendekvalitéer och en klimateffektiv byggnad.
-
-Klimatberäkningar har gjorts under projektet, där dras slutsatsen att huset uppfyller " ".
+A residential project focusing on livability, spacial qualities and climate calculations.
