@@ -1,13 +1,27 @@
 ---
 title: "Café Slottskogen"
 year: "2023"
-category: "Cafe"
+category: "Hand-drawn"
 location: "Slottskogen, Gothenburg"
 groupProject: 0;
-heroImage: "/projects/cafe-at1/modell_sida.png"
+heroImage: "/projects/cafe-at1/modell_sida.jpg"
 gallery: 
-    -   src: "/projects/radhus-at2/fasad_fram.png"
-        imgDesc: "Street Elevation"
+    -   src: "/projects/cafe-at1/sitplan.jpg"
+        imgDesc: "Context Plan"
+    -   src: "/projects/cafe-at1/plan.jpg"
+        imgDesc: ""
+    -   src: "/projects/cafe-at1/fasad_fram.jpg"
+        imgDesc: ""
+    -   src: "/projects/cafe-at1/fasad_sida.jpg"
+        imgDesc: ""
+    -   src: "/projects/cafe-at1/sektionAA.jpg"
+        imgDesc: ""
+    -   src: "/projects/cafe-at1/sektionBB.jpg"
+        imgDesc: ""
+    -   src: "/projects/cafe-at1/perspektiv.jpg"
+        imgDesc: "Interior Perspektive"
+    -   src: "/projects/cafe-at1/modell_fram.jpg"
+        imgDesc: ""
 ---
 
 My introduction to architecture in school, first drawn project.

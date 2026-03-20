@@ -1,17 +1,20 @@
 ---
-title: "Lamp"
-year: "2024"
-category: "Design, Grasshopper"
+title: "Frosted Steel"
+year: "2025"
+category: "Conceptual development, grasshopper"
 location: "Mossen, Gothenburg"
 groupProject: 1;
-heroImage: "/projects/optimerade-strukturer-at3/optimerade-rendering1.jpg"
+heroImage: "/projects/optimerade-strukturer-at3/rendering.jpg"
 gallery: 
-    -   src: "/projects/optimerade-strukturer-at3/optimerade-rendering1.jpg"
-        imgDesc: "Perspektiv"
-    -   src: "/projects/optimerade-strukturer-at3/optimerade-rendering1.jpg"
-        imgDesc: "Exteriört perspektiv"
-    -   src: "/projects/optimerade-strukturer-at3/optimerade-rendering1.jpg"
-        imgDesc: "rendering"
-    
+    -   src: "/projects/optimerade-strukturer-at3/referens1.jpg"
+        imgDesc: "Reference - Light through frost cristals"
+    -   src: "/projects/optimerade-strukturer-at3/referens2.jpg"
+        imgDesc: "Claude Monet - Frost at Giverny"
+    -   src: "/projects/optimerade-strukturer-at3/referens3.jpg"
+        imgDesc: "Morning frost in Gothenburg"
+    -   src: "/projects/optimerade-strukturer-at3/collage.png"
+        imgDesc: "Collage describing phenomenon"
+    -   src: "/projects/optimerade-strukturer-at3/axonometri.png"
+        imgDesc: "Structural system"
 ---
-Utforskande av fenomenet rimfrost, frosten klär hängande metallstavar vilka omsluter besökaren och skapar ett ljusspel i morgonsolen.
+An experiment on capturing frost and light to be observed through a structure.

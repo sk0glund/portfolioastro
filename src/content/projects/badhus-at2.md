@@ -1,14 +1,14 @@
 ---
 title: "Torslanda Bath"
 year: "2025"
-category: "Swimming Hall"
+category: "Structural design, grasshopper"
 location: "Torslanda, Gothenburg"
 groupProject: 1;
 heroImage: "/projects/badhus-at2/rendering_exteriör.png"
 gallery: 
-    -   src: "/projects/badhus-at2/sitplan.png"
+    -   src: "/projects/badhus-at2/Sitplan.png"
         imgDesc: "Context plan"
-    -   src: "/projects/badhus-at2/plan0.png"
+    -   src: "/projects/badhus-at2/plan.png"
         imgDesc: ""
     -   src: "/projects/badhus-at2/sektion_l.png"
         imgDesc: "Section A-A"
