@@ -1,0 +1,33 @@
+---
+title: "Naturrum"
+year: "2024"
+category: "Rhino, Twinmotion"
+location: ""
+groupProject: 0;
+heroImage: "/projects/rum-geometri-at1/rendering1.png"
+gallery: 
+    -   src: "/projects/rum-geometri-at1/form1.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/form2.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/modell1.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/modell2.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/komposition2.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/rum2.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/plan.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/sektion_fram.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/sektion_tvär.jpg"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/rendering3.png"
+        imgDesc: ""
+    -   src: "/projects/rum-geometri-at1/rendering2.png"
+        imgDesc: ""
+---
+
+First digital project, working iteratively with forms inbetween 2D and 3D.

@@ -24,4 +24,4 @@ gallery:
         imgDesc: ""
 ---
 
-My introduction to architecture in school, first drawn project.
+My introduction to architecture in school, working with the relation between seasons.

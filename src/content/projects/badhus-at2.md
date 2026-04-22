@@ -12,7 +12,7 @@ gallery:
         imgDesc: ""
     -   src: "/projects/badhus-at2/sektion_l.png"
         imgDesc: "Section A-A"
-    -   src: "/projects/badhus-at2/section_tvär.png"
+    -   src: "/projects/badhus-at2/sektion_tvär.png"
         imgDesc: "Section B-B"
     -   src: "/projects/badhus-at2/strukturmodell_iso.png"
         imgDesc: "Hall Structure"
